@@ -1,7 +1,3 @@
-{{
-  created=
-}}
-
 <center>
 
 # Welcome to the Freedeck Wiki!

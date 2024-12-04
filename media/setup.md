@@ -1,5 +1,5 @@
 {{
-  PAGETITLE=Setup
+  PAGETITLE=Setting up Freedeck
 }}
 
 <center>

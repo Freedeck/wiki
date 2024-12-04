@@ -1,3 +1,7 @@
+{{
+  PAGETITLE=Plugins (Extended)
+}}
+
 # Plugins (Extended)
 
 <&freewiki:#incomplete />

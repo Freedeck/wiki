@@ -1,3 +1,7 @@
+{{
+  PAGETITLE=Themes
+}}
+
 # Themes
 
 <&freewiki:#incomplete />

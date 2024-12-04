@@ -1,3 +1,7 @@
+{{
+  PAGETITLE=Plugins
+}}
+
 # Installing Plugins
 
 There's 2 ways of installing plugins, and 3 types of plugins.

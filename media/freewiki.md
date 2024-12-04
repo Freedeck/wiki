@@ -1,10 +1,10 @@
 {{
-  created=
+  PAGETITLE=About Freewiki
 }}
 
 <center>
 
-## Freewiki
+# Freewiki
 
 Freewiki is an experimental Markdown -> HTML converter that generates a live site on demand, and a static site for re-usability.
 

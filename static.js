@@ -16,6 +16,7 @@ fs.readdirSync('./media').forEach(file => {
       if (!fileTwo.endsWith('.md')) return;
       let wantedPageTwo = fileTwo.replace('.md', '');
       if(wantedPageTwo === '') wantedPageTwo = 'index';
+      if(!fs.existsSync(`./public/${file}`)) fs.mkdirSync(`./public/${file}`);
       gen.parseForFile(file+"/"+wantedPageTwo, 'static');
     })
   };

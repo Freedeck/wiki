@@ -1,3 +1,7 @@
+{{
+  PAGETITLE=OBSControl
+}}
+
 # Plugin: OBSControl
 
 <&freewiki:#official_plugin />
