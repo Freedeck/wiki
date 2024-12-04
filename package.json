@@ -1,0 +1,16 @@
+{
+  "name": "freewiki",
+  "version": "1.0.0",
+  "main": "live.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "marked": "^14.0.0"
+  }
+}

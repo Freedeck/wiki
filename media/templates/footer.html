@@ -1,0 +1,41 @@
+<footer class="center" id="footer">
+  <p>Freewiki is still a work in progress.</p>
+  <p>
+    If you see a bug, please <a href="https://freedeck.app/discord">join the Freedeck discord server.</a>
+  </p>
+  <p>
+    Freewiki & Freedeck are projects by <a href="https://aidens.dev">Aiden S.</a>
+  </p>
+  <button class="ok" id="footer-ok">
+    OK
+  </button>
+</footer>
+
+<style>
+  .center {
+    text-align: center;
+    background-color: rgba(25,25,25, 1);
+    box-shadow: 0 0 10px 0 rgba(255,255,255,0.25);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: .5%;
+    width: max-content;
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition-duration: 1s;
+  }
+</style>
+
+<script>
+  const ftr = document.getElementById("footer");
+  const isInLs = localStorage.getItem("fd.hide-footer");
+  if(isInLs) ftr.style.display = 'none';
+  document.getElementById("footer-ok").onclick = () => {
+    ftr.style.opacity = 0;
+    localStorage.setItem("fd.hide-footer", 'yes');
+    setTimeout(() => {
+      ftr.style.display = 'none';
+    },1000)
+  }
+</script>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freedeck - {$PAGETITLE}</title>
+</head>
+<body>
+  <&freewiki:#header />
+  <&freewiki:#global />
+  <div id="sidebar">
+    <a href="{$MAINPAGE}">
+      <h1>Freedeck</h1>
+    </a>
+    <&freewiki:sidebar />
+  </div>
+  <div id="mobile-too-small">
+    The Freedeck Wiki is too large to fit on mobile. Please view on your computer.
+  </div>
+  <div id="content-container">
+    <div id="content">
+      <&freewiki:page />
+    </div>
+  </div>
+  <&freewiki:#footer />
+  <style>
+    #sidebar a {
+      color: {$color_link};
+      text-decoration: none;
+    }
+    #sidebar a:hover {
+      color: {$color_link_hover};
+    }
+    #sidebar a:active {
+      color: {$color_link};
+    }
+    #sidebar {
+      background-color: {$color_main};
+      color: {$color_text};
+      padding: 20px;
+      margin: 0;
+      width: 10%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow-y: auto;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    ul li a {
+      color: {$color_link};
+      text-decoration: none;
+      margin: 10px 0;
+    }
+    ul li a:hover {
+      color: {$color_link_hover};
+    }
+    @font-face {
+      font-family: "Rethink Sans Hosted";
+      font-display: fallback;
+      src: url('https://freedeck.app/content/RethinkSans-VariableFont_wght.ttf');
+    }
+    img {
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    .time {
+      font-size: 0.8em;
+      color: #666;
+    }
+    button {
+      background-color: {$color_content};
+      color: {$color_text};
+      box-shadow: 0 0 10px 0 rgba(255,255,255,0.25);
+      border: 0;
+      padding: .5rem;
+      border-radius: 1.5rem;
+      transition-duration: .25s;
+    }
+    button:hover {
+      cursor: pointer;
+      transform: scale(1.125);
+    }
+    body {
+      font-family: "Rethink Sans Hosted", "Rethink Sans", sans-serif;
+      background-color: {$color_body};
+      margin: 0 auto;
+      padding: 0;
+    }
+    #content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #content {
+      margin-top: 7rem;
+      margin-left: 10%;
+      width: 80%;
+      padding: 20px;
+      background-color: {$color_content};
+      color: {$color_text};
+      border-radius: 10px;
+      height: 100%;
+    }
+
+    @media (max-width: 900px) {
+      #content {
+        margin-left: 5%;
+        font-size: 0.8em;
+      }
+    }
+
+    #mobile-too-small {
+      display: none;
+      font-size: 1.5em;
+      margin-top: 20%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      #content {
+        margin-left: 0;
+        font-size: 0.7em;
+        display:none;
+      }
+      #header {
+        display: none;
+      }
+      #mobile-too-small {
+        display: flex;
+      }
+      #sidebar {
+        display: none;
+      }
+    }
+
+</style>
+</body>
+</html>
