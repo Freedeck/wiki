@@ -6,16 +6,18 @@
 
 # Installing Freedeck
 
-This page will fully guide you through installing Freedeck!
+The installation guide begins here!
 
 </center>
 
 ## Using the App
 
 - First, download the App from [freedeck.app](https://freedeck.app)
+  - [If you need, click here for a direct download link from GitHub.](https://github.com/Freedeck/app/releases/latest/download/Freedeck.exe)
 
-- Run the installer
+- Run the App
   - If you get a Windows SmartScreen error, ignore it and press More Info then Run Anyway. This is because I don't pay for Windows code-signing.
+  - It may take more than a second for the App to start, as it has to load every library it self-contains.
 - Once you see this, click "Install"
 
 <center>
@@ -40,8 +42,8 @@ This page will fully guide you through installing Freedeck!
 
 <br>
 
-- Now, wait for the installer to finish!
-  - If you get prompted to install Git & Node.js, go through those installers!
+- Now, wait for the installation to finish!
+  - If you get prompted to install Git and/or Node.js, go through those installers. Freedeck will automatically continue when those installations finish and close.
 
 - When the installer finishes, the App will automagically transform into the actual launcher.
 

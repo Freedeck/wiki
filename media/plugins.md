@@ -11,7 +11,7 @@ Plugin types:
 - Single File (limited)
 - Source Folder (raw source code, uncompressed, slightly limited)
 - .Freedeck file (ASAR bundle, uncompressed, fully supported)
-- .fdpackage file (.tar.gz bundle, uncompressed, fully supported)
+- .fdpackage file (.tar.gz bundle, compressed, fully supported)
 
 On this page, I'll just be going over the .fdpackage files, as they're easiest to understand.
 
