@@ -89,6 +89,9 @@ const generateHTML = (lines, includeSections = false) => {
     let subSectionPages = dat['variables']['SUBSECTION_PAGES'] ? dat['variables']['SUBSECTION_PAGES'].split(';') : [];
     let subSectionTitles = dat['variables']['SUBSECTION_TITLES'] ? dat['variables']['SUBSECTION_TITLES'].split(';') : [];
     let sidebarContent = '';
+
+    let base = '/';
+    if(dat.variables.BASEPATH) base = dat.variables.BASEPATH;
     console.group("# Creating sidebar");
     sections.forEach((section, index) => {
       let pages = sectionPages[index].split(',');
@@ -96,7 +99,7 @@ const generateHTML = (lines, includeSections = false) => {
       sidebarContent += `<div class="section"><h2>${section}</h2><ul>`;
       console.log("% Pages: " + pages.join(", "));
       pages.forEach((page, pageIndex) => {
-        sidebarContent += `<li><a href="/${page}">${titles[pageIndex]}</a>`;
+        sidebarContent += `<li><a href="${base}${page}">${titles[pageIndex]}</a>`;
         // Check if this page has sub-sections
         let subSectionIndex = subSections.indexOf(titles[pageIndex]);
         if (subSectionIndex !== -1) {
@@ -104,7 +107,7 @@ const generateHTML = (lines, includeSections = false) => {
           let subTitles = subSectionTitles[subSectionIndex].split(',');
           sidebarContent += `<ul>`;
           subPages.forEach((subPage, subPageIndex) => {
-            sidebarContent += `<li><a href="/${subPage}">${subTitles[subPageIndex]}</a></li>`;
+            sidebarContent += `<li><a href="${base}${subPage}">${subTitles[subPageIndex]}</a></li>`;
           });
           sidebarContent += `</ul>`;
         }
@@ -122,7 +125,45 @@ const generateHTML = (lines, includeSections = false) => {
   return out;
 }
 
+const mini = require("html-minifier");
+
+const marked = require('marked');
+
+function parseForFile(wantedPage, mode='') {
+  let out = marked.parse(generateHtmlFor(wantedPage));
+  console.log("- Generated HTML for " + wantedPage);
+  let indexTemplate = generateHtmlFor('templates/index', '.html', true); // Include sections
+  console.log("- Generated index.html template");
+  indexTemplate = minify(indexTemplate);
+  console.log("- Minified index.html template [1/2]");
+  indexTemplate = indexTemplate.replace('<&freewiki:page />', out);
+  console.log("- Replaced index content");
+  console.log('+ Generated ' + wantedPage + '.html');
+  
+  console.log("!! Minifying output data [2/2]")
+  const minified = mini.minify(indexTemplate);
+
+  const diff = Diff.diffChars(indexTemplate, minified);
+  console.log("!!> Cleaned " + diff.length + " characters")
+
+  console.log('++ Outputting ' + wantedPage + '.html');
+  if(mode === 'static') {
+    pathToOut = wantedPage === 'index' ? './public/index.html' : `./public/${wantedPage}/index.html`;
+    if(!fs.existsSync(`./public/${wantedPage}`)) fs.mkdirSync(`./public/${wantedPage}`);
+    fs.writeFileSync(`${pathToOut}`, minified);
+    
+    console.log('+++ Successfully wrote ' + wantedPage + '.html');
+    return [indexTemplate, pathToOut];
+  }
+  console.groupEnd();
+  return indexTemplate;
+}
+
+require("colors");
+const Diff = require('diff');
+
 module.exports = {
+  parseForFile,
   generateHtmlFor,
   generateHTML,
   parseWMD,

@@ -9,9 +9,9 @@
   <&freewiki:#header />
   <&freewiki:#global />
   <div id="sidebar">
-    <a href="{$MAINPAGE}">
+    <a href="{$BASEPATH}">
       <h1>Freedeck</h1>
-    </a>
+    </a> 
     <&freewiki:sidebar />
   </div>
   <div id="mobile-too-small">
@@ -63,6 +63,11 @@
       font-display: fallback;
       src: url('https://freedeck.app/content/RethinkSans-VariableFont_wght.ttf');
     }
+    @font-face {
+      font-family: "Rethink Sans Local";
+      font-display: fallback;
+      src: url('{$BASEPATH}assets/RethinkSans-VariableFont_wght.ttf');
+    }
     img {
       max-width: 100%;
       align-items: center;
@@ -86,7 +91,7 @@
       transform: scale(1.125);
     }
     body {
-      font-family: "Rethink Sans Hosted", "Rethink Sans", sans-serif;
+      font-family: "Rethink Sans Local", "Rethink Sans Hosted", "Rethink Sans", sans-serif;
       background-color: {$color_body};
       margin: 0 auto;
       padding: 0;
@@ -102,8 +107,10 @@
       width: 80%;
       padding: 20px;
       background-color: {$color_content};
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 0 10px 0 rgba(255,255,255,0.125);
       color: {$color_text};
-      border-radius: 10px;
+      border-radius: 1.5rem;
       height: 100%;
     }
 

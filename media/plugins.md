@@ -11,7 +11,7 @@ Plugin types:
 
 On this page, I'll just be going over the .fdpackage files, as they're easiest to understand.
 
-[If you want a technical explanation of both the .Freedeck and .fdpackage type, or even creating plugins, this is the page to go to.](/plugins_extended)
+[If you want a technical explanation of both the .Freedeck and .fdpackage type, or even creating plugins, this is the page to go to.]({$BASEPATH}plugins_extended)
 
 ## Marketplace
 

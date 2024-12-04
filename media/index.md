@@ -15,4 +15,4 @@ This wiki uses all the latest versions of anything shown (App, Companion, etc...
 
 ## Don't know how to install Freedeck?
 
-[Check that section out!](/installation)
+[Check that section out!]({$BASEPATH}installation)

@@ -19,13 +19,13 @@ This page will fully guide you through installing Freedeck!
 - Once you see this, click "Install"
 
 <center>
-  <img src="/assets/installer.png" width="800">
+  <img src="{$BASEPATH}assets/installer.png" width="800">
 </center>
 
 - If you want, you can customize your install by going to the Settings tab.
 
 <center>
-  <img src="/assets/installer_2_1.png" width="800">
+  <img src="{$BASEPATH}assets/installer_2_1.png" width="800">
 </center>
 
 <br>
@@ -35,7 +35,7 @@ This page will fully guide you through installing Freedeck!
 <br>
 
 <center>
-  <img src="/assets/installer_2.png" width="800">
+  <img src="{$BASEPATH}assets/installer_2.png" width="800">
 </center>
 
 <br>
@@ -48,7 +48,7 @@ This page will fully guide you through installing Freedeck!
 <br>
 
 <center>
-  <img src="/assets/installer_3.png" width="800">
+  <img src="{$BASEPATH}assets/installer_3.png" width="800">
 </center>
 
 <center>
@@ -63,6 +63,6 @@ By now, you've installed Freedeck in less than 5 clicks.
 
 # Finished?
 
-You can now move onto the [Setup section of the wiki!](/setup)
+You can now move onto the [Setup section of the wiki!]({$BASEPATH}setup)
 
 </center>
