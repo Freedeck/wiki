@@ -6,6 +6,9 @@
 
 <&freewiki:#official_plugin />
 
-<br>
+Control your Elgato Wave Link devices from your Freedeck with this plugin!
 
-<&freewiki:#blank />
+Current Features:
+
+- Monitor/Stream muting on any input! (Mic, Stream, Game, etc.)
+- Monitor/Stream volume slider on any input! (Mic, Stream, Game, etc.)

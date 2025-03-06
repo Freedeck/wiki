@@ -14,14 +14,15 @@
 <style>
   .center {
     text-align: center;
-    background-color: rgba(25,25,25, 1);
-    box-shadow: 0 0 10px 0 rgba(255,255,255,0.25);
+    background-color: rgba(12,12,12, 1);
+    box-shadow: 0 0 2px 0 rgba(255,255,255,0.25);
     color: white;
     padding: 10px;
     position: fixed;
     bottom: 0;
-    left: .5%;
-    width: max-content;
+    left: 0;
+    width: 10%;
+    font-size: small;
     border-radius: 1.5rem 1.5rem 0 0;
     transition-duration: 1s;
   }
@@ -32,7 +33,7 @@
   const isInLs = localStorage.getItem("fd.hide-footer");
   if(isInLs) ftr.style.display = 'none';
   document.getElementById("footer-ok").onclick = () => {
-    ftr.style.opacity = 0;
+    ftr.style.bottom = '-100%';
     localStorage.setItem("fd.hide-footer", 'yes');
     setTimeout(() => {
       ftr.style.display = 'none';
