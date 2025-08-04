@@ -1,5 +1,9 @@
 # wiki
 
+## MOVED TO THE DOCS
+
+[MOVED TO docs.freedeck.app](https://docs.freedeck.app)
+
 This is Freewiki alongside the entirety of the Freedeck Wiki (hosted at wiki.freedeck.app)
 
 ## Hosting a live server
